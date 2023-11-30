@@ -2,6 +2,7 @@ import html2text
 import requests
 import os
 from bs4 import BeautifulSoup
+import json
 import markdown
 from problem_list import problem_list
 
@@ -28,12 +29,15 @@ def getBOJHTML(problemID):
         html = responses.text
         return (html)
     
-def save_page_md(id, html):
+def save_page_md(problem_id, id, html):
     # Parse the HTML content
     soup = BeautifulSoup(html, 'html.parser')
 
     # title
     title = soup.find('span', id='problem_title').text
+    level = requests.get(f'https://solved.ac/api/v3/problem/show?problemId={problem_id}').text
+    level = json.loads(level)['level']
+    star = (level-1)//5 + 1
 
     # Extract content under div#problem_description
     problem_description = soup.find('div', id='problem_description')
@@ -60,7 +64,7 @@ def save_page_md(id, html):
     h.ignore_links = False
 
     # Convert HTML elements to Markdown and concatenate them
-    markdown_content = f"# {id}. {title}\n"
+    markdown_content = f"# {id}. {title} {'★'*star + '☆'*(3-star)}\n"
     for element in [problem_description, input_description, output_description]:
         if element:
             markdown_content += h.handle(str(element))
@@ -126,6 +130,11 @@ def save_page_html(chapter, id, md_text):
                 border-radius: 5px;
                 background-color: #eeeae6;
             }}
+            img{{
+                display: block;
+                height: 250px;
+                margin: 0 auto;
+            }}
         </style>
     </head>
     <body>
@@ -140,11 +149,12 @@ def save_page_html(chapter, id, md_text):
 
     return styled_html
 
+def crawl():
+    for chapter in problem_list.keys():
+            for i, id in enumerate(problem_list[chapter]):
+                html = getBOJHTML(id)
+                md = save_page_md(id, i+1, html)
+                save_page_html(chapter, id, md)
 
 if __name__ == "__main__":
-    for chapter in problem_list.keys():
-        for i, id in enumerate(problem_list[chapter]):
-            html = getBOJHTML(id)
-            md = save_page_md(i+1, html)
-            save_page_html(chapter, id, md)
-
+    crawl()
