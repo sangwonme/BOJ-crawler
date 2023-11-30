@@ -1,0 +1,108 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>5. 나누기 ★☆☆</h1>
+<p>두 정수 N과 F가 주어진다. 지민이는 정수 N의 가장 뒤 두 자리를 적절히 바꿔서 N을 F로 나누어 떨어지게 만들려고 한다. 만약 가능한
+것이 여러 가지이면, 뒤 두 자리를 가능하면 작게 만들려고 한다.</p>
+<p>예를 들어, N=275이고, F=5이면, 답은 00이다. 200이 5로 나누어 떨어지기 때문이다. N=1021이고, F=11이면, 정답은
+01인데, 1001이 11로 나누어 떨어지기 때문이다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 N, 둘째 줄에 F가 주어진다. N은 100보다 크거나 같고, 2,000,000,000보다 작거나 같은 자연수이다. F는
+100보다 작거나 같은 자연수이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 마지막 두 자리를 모두 출력한다. 한자리이면 앞에 0을 추가해서 두 자리로 만들어야 한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>1000
+3
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>02
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>2000000000
+100
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>00
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>23442
+75
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>00
+</code></pre>
+<h2>예제 입력 4</h2>
+<pre><code>428392
+17
+</code></pre>
+<h2>예제 출력 4</h2>
+<pre><code>15
+</code></pre>
+<h2>예제 입력 5</h2>
+<pre><code>32442
+99
+</code></pre>
+<h2>예제 출력 5</h2>
+<pre><code>72
+</code></pre>
+    </body>
+    </html>
+    

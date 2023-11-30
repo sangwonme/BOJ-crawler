@@ -1,0 +1,86 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>6. 좌표 압축 ★★☆</h1>
+<p>수직선 위에 N개의 좌표 X1, X2, ..., XN이 있다. 이 좌표에 좌표 압축을 적용하려고 한다.</p>
+<p>Xi를 좌표 압축한 결과 X'i의 값은 Xi &gt; Xj를 만족하는 서로 다른 좌표 Xj의 개수와 같아야 한다.</p>
+<p>X1, X2, ..., XN에 좌표 압축을 적용한 결과 X'1, X'2, ..., X'N를 출력해보자.</p>
+<h2>입력</h2>
+<p>첫째 줄에 N이 주어진다.</p>
+<p>둘째 줄에는 공백 한 칸으로 구분된 X1, X2, ..., XN이 주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 X'1, X'2, ..., X'N을 공백 한 칸으로 구분해서 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>5
+2 4 -10 4 -9
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>2 3 0 3 1
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>6
+1000 999 1000 999 1000 999
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>1 0 1 0 1 0
+</code></pre>
+    </body>
+    </html>
+    

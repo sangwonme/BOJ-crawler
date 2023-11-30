@@ -1,0 +1,102 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>2. 폴리오미노 ★★☆</h1>
+<p>민식이는 다음과 같은 폴리오미노 2개를 무한개만큼 가지고 있다. AAAA와 BB</p>
+<p>이제 '.'와 'X'로 이루어진 보드판이 주어졌을 때, 민식이는 겹침없이 'X'를 모두 폴리오미노로 덮으려고 한다. 이때, '.'는
+폴리오미노로 덮으면 안 된다.</p>
+<p>폴리오미노로 모두 덮은 보드판을 출력하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>첫째 줄에 보드판이 주어진다. 보드판의 크기는 최대 50이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 사전순으로 가장 앞서는 답을 출력한다. 만약 덮을 수 없으면 -1을 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>XXXXXX
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>AAAABB
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>XX.XX
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>BB.BB
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>XXXX....XXX.....XX
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>-1
+</code></pre>
+<h2>예제 입력 4</h2>
+<pre><code>X
+</code></pre>
+<h2>예제 출력 4</h2>
+<pre><code>-1
+</code></pre>
+<h2>예제 입력 5</h2>
+<pre><code>XX.XXXXXXXXXX..XXXXXXXX...XXXXXX
+</code></pre>
+<h2>예제 출력 5</h2>
+<pre><code>BB.AAAAAAAABB..AAAAAAAA...AAAABB
+</code></pre>
+    </body>
+    </html>
+    

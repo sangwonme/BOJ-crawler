@@ -1,0 +1,111 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>2. 큐 ★★☆</h1>
+<p>정수를 저장하는 큐를 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.</p>
+<p>명령은 총 여섯 가지이다.</p>
+<ul>
+<li>push X: 정수 X를 큐에 넣는 연산이다.</li>
+<li>pop: 큐에서 가장 앞에 있는 정수를 빼고, 그 수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.</li>
+<li>size: 큐에 들어있는 정수의 개수를 출력한다.</li>
+<li>empty: 큐가 비어있으면 1, 아니면 0을 출력한다.</li>
+<li>front: 큐의 가장 앞에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.</li>
+<li>back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.</li>
+</ul>
+<h2>입력</h2>
+<p>첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 주어지는
+정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 문제에 나와있지 않은 명령이 주어지는 경우는 없다.</p>
+<h2>출력</h2>
+<p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>15
+push 1
+push 2
+front
+back
+size
+empty
+pop
+pop
+pop
+size
+empty
+pop
+push 3
+empty
+front
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>1
+2
+2
+0
+1
+2
+-1
+0
+1
+-1
+0
+3
+</code></pre>
+    </body>
+    </html>
+    

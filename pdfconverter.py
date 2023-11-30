@@ -1,10 +1,9 @@
 import os
 from pyhtml2pdf import converter
-from problem_list import problem_list
 import time
 import PyPDF2
 
-def get_all_paths(chapter):
+def get_all_paths(chapter, problem_list):
     dir = f'data/{chapter}/pdf'
     paths = [os.path.join(dir, 'title.pdf')]
     for i, id in enumerate(problem_list[chapter]):
@@ -33,7 +32,7 @@ def merge_pdfs(paths, output):
     with open(output, 'wb') as out:
         pdf_writer.write(out)
 
-def save_pdf():
+def save_pdf(problem_list):
     init_time = time.time()
     for chapter in problem_list.keys():
         path = os.path.abspath(f'data/{chapter}/title.html')
@@ -50,14 +49,9 @@ def save_pdf():
             print(f'Saved : {chapter} - {id} pdf. ({round(time_duration,2)} sec.)')
     print(round(time.time()-init_time, 2), 'sec.')
 
-def convert():
-    save_pdf()
+def convert(problem_list, filename):
+    save_pdf(problem_list)
     pdf_paths = []
     for chapter in problem_list.keys():
-        pdf_paths += get_all_paths(chapter)
-    merge_pdfs(pdf_paths, './BOJ.pdf')
-
-if __name__ == "__main__":
-    # convert()
-    paths = get_all_paths('GreedyAlgorithm')
-    merge_pdfs(paths, 'output.pdf')
+        pdf_paths += get_all_paths(chapter, problem_list)
+    merge_pdfs(pdf_paths, filename)

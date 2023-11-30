@@ -1,0 +1,133 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>5. 그룹 단어 체커 ★★☆</h1>
+<p>그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다. 예를 들면, ccazzzzbb는 c, a,
+z, b가 모두 연속해서 나타나고, kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만, aabbbccb는 b가 떨어져서
+나타나기 때문에 그룹 단어가 아니다.</p>
+<p>단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>첫째 줄에 단어의 개수 N이 들어온다. N은 100보다 작거나 같은 자연수이다. 둘째 줄부터 N개의 줄에 단어가 들어온다. 단어는 알파벳
+소문자로만 되어있고 중복되지 않으며, 길이는 최대 100이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 그룹 단어의 개수를 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>3
+happy
+new
+year
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>3
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>4
+aba
+abab
+abcabc
+a
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>1
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>5
+ab
+aa
+aca
+ba
+bb
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>4
+</code></pre>
+<h2>예제 입력 4</h2>
+<pre><code>2
+yzyzy
+zyzyz
+</code></pre>
+<h2>예제 출력 4</h2>
+<pre><code>0
+</code></pre>
+<h2>예제 입력 5</h2>
+<pre><code>1
+z
+</code></pre>
+<h2>예제 출력 5</h2>
+<pre><code>1
+</code></pre>
+<h2>예제 입력 6</h2>
+<pre><code>9
+aaa
+aaazbz
+babb
+aazz
+azbz
+aabbaa
+abacc
+aba
+zzaz
+</code></pre>
+<h2>예제 출력 6</h2>
+<pre><code>2
+</code></pre>
+    </body>
+    </html>
+    

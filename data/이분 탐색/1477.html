@@ -1,0 +1,99 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>11. 휴게소 세우기 ★★★</h1>
+<p>다솜이는 유료 고속도로를 가지고 있다. 다솜이는 현재 고속도로에 휴게소를 N개 가지고 있는데, 휴게소의 위치는 고속도로의 시작으로부터 얼만큼
+떨어져 있는지로 주어진다. 다솜이는 지금 휴게소를 M개 더 세우려고 한다.</p>
+<p>다솜이는 이미 휴게소가 있는 곳에 휴게소를 또 세울 수 없고, 고속도로의 끝에도 휴게소를 세울 수 없다. 휴게소는 정수 위치에만 세울 수
+있다.</p>
+<p>다솜이는 이 고속도로를 이용할 때, 모든 휴게소를 방문한다. 다솜이는 휴게소를 M개 더 지어서 휴게소가 없는 구간의 길이의 최댓값을 최소로
+하려고 한다. (반드시 M개를 모두 지어야 한다.)</p>
+<p>예를 들어, 고속도로의 길이가 1000이고, 현재 휴게소가 {200, 701, 800}에 있고, 휴게소를 1개 더 세우려고 한다고 해보자.</p>
+<p>일단, 지금 이 고속도로를 타고 달릴 때, 휴게소가 없는 구간의 최댓값은 200~701구간인 501이다. 하지만, 새로운 휴게소를
+451구간에 짓게 되면, 최대가 251이 되어서 최소가 된다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 현재 휴게소의 개수 N, 더 지으려고 하는 휴게소의 개수 M, 고속도로의 길이 L이 주어진다. 둘째 줄에 현재 휴게소의 위치가
+공백을 사이에 두고 주어진다. N = 0인 경우 둘째 줄은 빈 줄이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 M개의 휴게소를 짓고 난 후에 휴게소가 없는 구간의 최댓값의 최솟값을 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>6 7 800
+622 411 201 555 755 82
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>70
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>3 1 1000
+200 701 800
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>251
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>3 1 1000
+300 701 800
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>300
+</code></pre>
+    </body>
+    </html>
+    

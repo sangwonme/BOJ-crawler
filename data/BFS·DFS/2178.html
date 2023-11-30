@@ -1,0 +1,120 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>2. 미로 탐색 ★★☆</h1>
+<p>N×M크기의 배열로 표현되는 미로가 있다.</p>
+<p>1 | 0 | 1 | 1 | 1 | 1<br />
+---|---|---|---|---|---<br />
+1 | 0 | 1 | 0 | 1 | 0<br />
+1 | 0 | 1 | 0 | 1 | 1<br />
+1 | 1 | 1 | 0 | 1 | 1  </p>
+<p>미로에서 1은 이동할 수 있는 칸을 나타내고, 0은 이동할 수 없는 칸을 나타낸다. 이러한 미로가 주어졌을 때, (1, 1)에서 출발하여
+(N, M)의 위치로 이동할 때 지나야 하는 최소의 칸 수를 구하는 프로그램을 작성하시오. 한 칸에서 다른 칸으로 이동할 때, 서로 인접한
+칸으로만 이동할 수 있다.</p>
+<p>위의 예에서는 15칸을 지나야 (N, M)의 위치로 이동할 수 있다. 칸을 셀 때에는 시작 위치와 도착 위치도 포함한다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 두 정수 N, M(2 ≤ N, M ≤ 100)이 주어진다. 다음 N개의 줄에는 M개의 정수로 미로가 주어진다. 각각의 수들은
+<strong>붙어서</strong> 입력으로 주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 지나야 하는 최소의 칸 수를 출력한다. 항상 도착위치로 이동할 수 있는 경우만 입력으로 주어진다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>4 6
+101111
+101010
+101011
+111011
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>15
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>4 6
+110110
+110110
+111111
+111101
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>9
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>2 25
+1011101110111011101110111
+1110111011101110111011101
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>38
+</code></pre>
+<h2>예제 입력 4</h2>
+<pre><code>7 7
+1011111
+1110001
+1000001
+1000001
+1000001
+1000001
+1111111
+</code></pre>
+<h2>예제 출력 4</h2>
+<pre><code>13
+</code></pre>
+    </body>
+    </html>
+    

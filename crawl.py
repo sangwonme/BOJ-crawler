@@ -4,8 +4,6 @@ import os
 from bs4 import BeautifulSoup
 import json
 import markdown
-from problem_list import problem_list
-
 def getBOJHTML(problemID):
 
     headers = {
@@ -132,7 +130,7 @@ def save_page_html(chapter, id, md_text):
             }}
             img{{
                 display: block;
-                height: 250px;
+                height: 120px;
                 margin: 0 auto;
             }}
         </style>
@@ -146,6 +144,7 @@ def save_page_html(chapter, id, md_text):
     os.makedirs(f'./data/{chapter}', exist_ok=True)
     with open(f'./data/{chapter}/{id}.html', 'w') as file:
         file.write(styled_html)
+        print(f'{chapter}: #{id} html saved.')
 
     return styled_html
 
@@ -192,9 +191,9 @@ def save_title(i, chapter):
 
     return styled_html
 
-def crawl():
+def crawl(problem_list, start_ch):
     for j, chapter in enumerate(problem_list.keys()):
-            save_title(j+1, chapter)
+            save_title(start_ch+j, chapter)
             for i, id in enumerate(problem_list[chapter]):
                 html = getBOJHTML(id)
                 md = save_page_md(id, i+1, html)

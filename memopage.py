@@ -1,7 +1,6 @@
 import os
 import markdown
 from pyhtml2pdf import converter
-from problem_list import problem_list
 
 def save_memo():
     html_portion = markdown.markdown(f'## MEMO ✎')

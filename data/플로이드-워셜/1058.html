@@ -1,0 +1,139 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }
+            h1, h2 {
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            a {
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #cce6ff; /* Light blue for table headers */
+            }
+            code{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }
+            img{
+                display: block;
+                height: 120px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>2. 친구 ★★☆</h1>
+<p>지민이는 세계에서 가장 유명한 사람이 누구인지 궁금해졌다. 가장 유명한 사람을 구하는 방법은 각 사람의 2-친구를 구하면 된다. 어떤 사람
+A가 또다른 사람 B의 2-친구가 되기 위해선, 두 사람이 친구이거나, A와 친구이고, B와 친구인 C가 존재해야 된다. 여기서 가장 유명한
+사람은 2-친구의 수가 가장 많은 사람이다. 가장 유명한 사람의 2-친구의 수를 출력하는 프로그램을 작성하시오.</p>
+<p>A와 B가 친구면, B와 A도 친구이고, A와 A는 친구가 아니다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 사람의 수 N이 주어진다. N은 50보다 작거나 같은 자연수이다. 둘째 줄부터 N개의 줄에 각 사람이 친구이면 Y, 아니면 N이
+주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 가장 유명한 사람의 2-친구의 수를 출력한다.</p>
+<h2>예제 입력 1</h2>
+<pre><code>3
+NYY
+YNY
+YYN
+</code></pre>
+<h2>예제 출력 1</h2>
+<pre><code>2
+</code></pre>
+<h2>예제 입력 2</h2>
+<pre><code>3
+NNN
+NNN
+NNN
+</code></pre>
+<h2>예제 출력 2</h2>
+<pre><code>0
+</code></pre>
+<h2>예제 입력 3</h2>
+<pre><code>5
+NYNNN
+YNYNN
+NYNYN
+NNYNY
+NNNYN
+</code></pre>
+<h2>예제 출력 3</h2>
+<pre><code>4
+</code></pre>
+<h2>예제 입력 4</h2>
+<pre><code>10
+NNNNYNNNNN
+NNNNYNYYNN
+NNNYYYNNNN
+NNYNNNNNNN
+YYYNNNNNNY
+NNYNNNNNYN
+NYNNNNNYNN
+NYNNNNYNNN
+NNNNNYNNNN
+NNNNYNNNNN
+</code></pre>
+<h2>예제 출력 4</h2>
+<pre><code>8
+</code></pre>
+<h2>예제 입력 5</h2>
+<pre><code>15
+NNNNNNNNNNNNNNY
+NNNNNNNNNNNNNNN
+NNNNNNNYNNNNNNN
+NNNNNNNYNNNNNNY
+NNNNNNNNNNNNNNY
+NNNNNNNNYNNNNNN
+NNNNNNNNNNNNNNN
+NNYYNNNNNNNNNNN
+NNNNNYNNNNNYNNN
+NNNNNNNNNNNNNNY
+NNNNNNNNNNNNNNN
+NNNNNNNNYNNNNNN
+NNNNNNNNNNNNNNN
+NNNNNNNNNNNNNNN
+YNNYYNNNNYNNNNN
+</code></pre>
+<h2>예제 출력 5</h2>
+<pre><code>6
+</code></pre>
+    </body>
+    </html>
+    
