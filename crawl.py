@@ -149,8 +149,52 @@ def save_page_html(chapter, id, md_text):
 
     return styled_html
 
+def save_title(i, chapter):
+    html_portion = markdown.markdown(f'## CH{i}. \n# {chapter}')
+
+    styled_html = f"""
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {{
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+                height: 85vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }}
+            h1, h2 {{
+                color: #104061; 
+                font-size: 60px;
+                padding: 10px 0;
+                margin: 10px;
+            }}
+            h2 {{
+                font-size: 20px;
+            }}
+        </style>
+    </head>
+    <body>
+        {html_portion}
+    </body>
+    </html>
+    """
+    os.makedirs(f'./data/{chapter}', exist_ok=True)
+    with open(f'./data/{chapter}/title.html', 'w') as file:
+        file.write(styled_html)
+
+    return styled_html
+
 def crawl():
-    for chapter in problem_list.keys():
+    for j, chapter in enumerate(problem_list.keys()):
+            save_title(j+1, chapter)
             for i, id in enumerate(problem_list[chapter]):
                 html = getBOJHTML(id)
                 md = save_page_md(id, i+1, html)
