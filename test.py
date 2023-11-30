@@ -3,7 +3,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 import markdown
-import pdfkit
+from problem_list import problem_list
 
 def getBOJHTML(problemID):
 
@@ -69,36 +69,82 @@ def save_page_md(id, html):
         if element:
             markdown_content += h.handle(str(element).replace('복사', ''))
 
-    # Save to a Markdown file
-    with open('output.md', 'w') as file:
-        file.write(markdown_content)
+    return markdown_content
 
-    tmp = markdown_to_html(markdown_content)
+def save_page_html(chapter, id, md_text):
+    html_portion = markdown.markdown(md_text)
 
-    import pdb ; pdb.set_trace()
-    html_to_pdf(tmp, 'output.pdf')
+    styled_html = f"""
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {{
+                font-family: 'Arial', sans-serif;
+                margin: 40px;
+                background-color: #ffffff; /* White background */
+                color: #333366; /* Dark blue text */
+            }}
+            h1, h2 {{
+                color: #104061; /* Vibrant blue for headings */
+                font-size: 30px;
+                border-bottom: 1px solid #6f8695;
+                border-top: 3px solid #6f8695;
+                padding: 10px 0;
+            }}
+            h2 {{
+                font-size: 20px;
+            }}
+            p {{
+                font-size: 16px;
+                line-height: 1.6;
+            }}
+            a {{
+                color: #6699ff; /* Lighter blue for links */
+                text-decoration: none;
+            }}
+            a:hover {{
+                text-decoration: underline;
+            }}
+            table {{
+                width: 100%;
+                border-collapse: collapse;
+            }}
+            th, td {{
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }}
+            th {{
+                background-color: #cce6ff; /* Light blue for table headers */
+            }}
+            code{{
+                display: block;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #eeeae6;
+            }}
+        </style>
+    </head>
+    <body>
+        {html_portion}
+    </body>
+    </html>
+    """
 
+    os.makedirs(f'./data/{chapter}', exist_ok=True)
+    with open(f'./data/{chapter}/{id}.html', 'w') as file:
+        file.write(styled_html)
 
-    print("Content saved to 'output.md'")
-
-# Convert Markdown to HTML
-def markdown_to_html(md_text):
-    html = markdown.markdown(md_text)
-    return html
-
-# Convert HTML to PDF
-def html_to_pdf(html, output_filename):
-    # Set the path to the wkhtmltopdf executable
-    path_wkhtmltopdf = '/usr/local/bin/wkhtmltopdf'  # Update this path
-    config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-
-    # Use this config when converting
-    pdfkit.from_string(html, output_filename, configuration=config)
-
+    return styled_html
 
 
 if __name__ == "__main__":
-    id = 2468
-    html = getBOJHTML(id)
-    save_page_md(id, html)
+    for chapter in problem_list.keys():
+        for i, id in enumerate(problem_list[chapter]):
+            html = getBOJHTML(id)
+            md = save_page_md(i+1, html)
+            save_page_html(chapter, id, md)
 
