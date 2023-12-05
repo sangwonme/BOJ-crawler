@@ -130,7 +130,7 @@ def save_page_html(chapter, id, md_text):
             }}
             img{{
                 display: block;
-                height: 120px;
+                height: 140px;
                 margin: 0 auto;
             }}
         </style>
@@ -201,3 +201,4 @@ def crawl(problem_list, start_ch):
 
 if __name__ == "__main__":
     crawl()
+

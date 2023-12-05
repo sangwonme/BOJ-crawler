@@ -24,7 +24,7 @@ def merge_pdfs(paths, output):
         for page in range(len(pdf_reader.pages)):
             pdf_writer.add_page(pdf_reader.pages[page])
         # add memo pages
-        if i == 0: #title
+        if 'title' in path: #title
             add_memo_page(3)
         else:
             add_memo_page(1)
@@ -39,6 +39,7 @@ def save_pdf(problem_list):
         pdf_dir = os.path.join(os.path.dirname(path), 'pdf')
         os.makedirs(pdf_dir, exist_ok=True)
         converter.convert(f'file:///{path}', os.path.join(pdf_dir, 'title.pdf'))
+        print(f'Saved : {chapter}pdf.')
         for i, id in enumerate(problem_list[chapter]):
             start_time = time.time()
             path = os.path.abspath(f'data/{chapter}/{id}.html')
