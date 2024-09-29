@@ -1,0 +1,100 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>12756 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>12756. 고급 여관</h1>
+<p>"럭키스톤"은 카드를 통해 대결하는 게임이다. 창식이는 럭키스톤을 자주 한다.</p>
+<p>이 게임의 카드에는 공격력과 생명력이 표시되어있다. 왼쪽에는 공격력이, 오른쪽에는 생명력이 숫자로 적혀있다.</p>
+<p>서로 꺼낸 카드를 비교하여 남길 카드를 결정하는 데, 카드의 비교는 다음과 같이 이루어진다.</p>
+<ul>
+<li><em>비교하는 카드의 공격력만큼 동시에 서로 상대 카드의 생명력을 깎는다</em> <em>. 줄어든 생명력은 다시 회복되지 않는다.</em></li>
+<li><em>생명력이 0 이하인 경우에는 카드는 죽은 상태로 전환된다.</em></li>
+<li><em>카드가 두 장 모두 남아있다면 비교를 계속한다.</em></li>
+</ul>
+<p>요즘 따라 게임이 안 풀리는 창식이는 대전 전에 가능한 수를 미리 계산하여 최대한 이득을 챙기고 싶어 한다.</p>
+<p>카드 2개의 공격력과 생명력이 주어지면 어떤 플레이어의 카드가 남아있을지 출력하는 프로그램을 작성해주자.</p>
+<h2>입력</h2>
+<p>첫째 줄에 플레이어 A가 꺼낸 카드의 공격력과 생명력이 주어진다.</p>
+<p>둘째 줄에 플레이어 B가 꺼낸 카드의 공격력과 생명력이 주어진다.</p>
+<p>카드의 공격력과 생명력은 100,000 이하의 자연수이다.</p>
+<h2>출력</h2>
+<p>플레이어 A의 카드가 남아있다면 "PLAYER A"를, 플레이어 B의 카드가 남아있다면 "PLAYER B"를 출력한다.</p>
+<p>모두 죽은 상태라면 "DRAW"를 따옴표 없이 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>4 12
+5 5
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>PLAYER A
+</code></pre>
+        </body>
+        </html>
+        

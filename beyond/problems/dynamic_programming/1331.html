@@ -1,0 +1,295 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>1331 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>1331. 나이트 투어</h1>
+<p>나이트 투어는 체스판에서 나이트가 모든 칸을 정확히 한 번씩 방문하며, 마지막으로 방문하는 칸에서 시작점으로 돌아올 수 있는 경로이다. 다음
+그림은 나이트 투어의 한 예이다.</p>
+<p><img alt="" src="/upload/201004/chee.JPG" /></p>
+<p>영식이는 6×6 체스판 위에서 또 다른 나이트 투어의 경로를 찾으려고 한다. 체스판의 한 칸은 A, B, C, D, E, F 중에서 하나와
+1, 2, 3, 4, 5, 6 중에서 하나를 이어 붙인 것으로 나타낼 수 있다. 영식이의 나이트 투어 경로가 주어질 때, 이것이 올바른
+것이면 Valid, 올바르지 않으면 Invalid를 출력하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>36개의 줄에 나이트가 방문한 순서대로 입력이 주어진다. 체스판에 존재하는 칸만 입력으로 주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 문제의 정답을 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1
+B3
+A5
+C6
+E5
+F3
+D2
+F1
+E3
+F5
+D4
+B5
+A3
+B1
+C3
+A2
+C1
+E2
+F4
+E6
+C5
+A6
+B4
+D5
+F6
+E4
+D6
+C4
+B6
+A4
+B2
+D1
+F2
+D3
+E1
+C2
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Valid
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1
+C2
+E3
+F5
+D4
+B3
+A1
+C2
+E3
+F5
+D4
+B3
+A1
+C2
+E3
+F5
+D4
+B3
+A1
+C2
+E3
+F5
+D4
+B3
+A1
+C2
+E3
+F5
+D4
+B3
+A1
+C2
+E3
+F5
+D4
+B3
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Invalid
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>D4
+F5
+D6
+B5
+A3
+B1
+D2
+F1
+E3
+D1
+F2
+E4
+F6
+D5
+B6
+A4
+B2
+C4
+A5
+C6
+E5
+F3
+E1
+C2
+A1
+B3
+C5
+E6
+F4
+E2
+C3
+A2
+C1
+D3
+B4
+A6
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Invalid
+</code></pre>
+<h3>예제 4</h3>
+<p><strong>Input:</strong></p>
+<pre><code>D4
+F5
+D6
+B5
+A3
+B1
+D2
+F1
+E3
+D1
+F2
+E4
+F6
+D5
+B6
+A4
+B2
+C4
+A5
+C6
+E5
+F3
+E1
+C2
+A1
+B3
+C5
+A6
+B4
+A2
+C3
+E2
+C1
+D3
+F4
+E6
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Valid
+</code></pre>
+<h3>예제 5</h3>
+<p><strong>Input:</strong></p>
+<pre><code>C5
+D3
+F2
+D1
+B2
+A4
+B6
+D5
+C3
+E4
+F6
+B3
+A1
+C2
+E1
+F3
+E5
+C6
+A5
+C4
+A3
+B1
+D2
+F1
+E3
+F5
+D6
+B5
+D4
+E6
+F4
+E2
+C1
+A2
+B4
+A6
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Invalid
+</code></pre>
+        </body>
+        </html>
+        

@@ -1,0 +1,94 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>1672 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>1672. DNA 해독</h1>
+<p>N개의 A, G, C, T로 구성되어 있는 DNA 염기서열이 있다. 그리고 우리는 이 염기서열을 아래의 표를 이용하여 해독을 해야 한다.</p>
+<p><img alt="" src="/JudgeOnline/upload/201005/pyuo.PNG" /></p>
+<p>해독 방법은 염기 서열에서 제일 끝에 있는 두 개의 염기를 An-1, An이라 할 때, An-1을 행으로 An을 열로 대응시켜 그에 해당하는
+하나의 염기로 바꾸는 방식을 반복하는 것이다. 예를 들어 <code>AAGTCG</code>라는 염기서열이 있다고 하자. 이 서열을 위의 규칙 때로 해독하면
+<code>AAGTCG</code> → <code>AAGTT</code> → <code>AAGT</code> → <code>AAA</code> → <code>AA</code> → <code>A</code> 가 되어 최종적으로 해독한 염기는 <code>A</code>가 된다.</p>
+<p>문제는 어떤 염기서열이 주어졌을 때 위의 표를 참고하여 해독된 최종 염기를 출력하는 것이다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 염기 서열의 길이 N(1 ≤ N ≤ 1,000,000)이 주어진다. 둘째 줄에는 염기서열을 나타내는 길이가 N인 문자열이
+주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 최종 염기를 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>6
+AAGTCG
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>A
+</code></pre>
+        </body>
+        </html>
+        

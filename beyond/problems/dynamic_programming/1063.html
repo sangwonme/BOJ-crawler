@@ -1,0 +1,178 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>1063 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>1063. 킹</h1>
+<p>8*8크기의 체스판에 왕이 하나 있다. 킹의 현재 위치가 주어진다. 체스판에서 말의 위치는 다음과 같이 주어진다. 알파벳 하나와 숫자 하나로
+이루어져 있는데, 알파벳은 열을 상징하고, 숫자는 행을 상징한다. 열은 가장 왼쪽 열이 A이고, 가장 오른쪽 열이 H까지 이고, 행은 가장
+아래가 1이고 가장 위가 8이다. 예를 들어, 왼쪽 아래 코너는 A1이고, 그 오른쪽 칸은 B1이다.</p>
+<p>킹은 다음과 같이 움직일 수 있다.</p>
+<ul>
+<li>R : 한 칸 오른쪽으로</li>
+<li>L : 한 칸 왼쪽으로</li>
+<li>B : 한 칸 아래로</li>
+<li>T : 한 칸 위로</li>
+<li>RT : 오른쪽 위 대각선으로</li>
+<li>LT : 왼쪽 위 대각선으로</li>
+<li>RB : 오른쪽 아래 대각선으로</li>
+<li>LB : 왼쪽 아래 대각선으로</li>
+</ul>
+<p>체스판에는 돌이 하나 있는데, 돌과 같은 곳으로 이동할 때는, 돌을 킹이 움직인 방향과 같은 방향으로 한 칸 이동시킨다. 아래 그림을
+참고하자.</p>
+<p><img alt="" src="https://upload.acmicpc.net/259549ad-b275-48a1-91f7-197a7ce72a23/-/preview/" /></p>
+<p>입력으로 킹이 어떻게 움직여야 하는지 주어진다. 입력으로 주어진 대로 움직여서 킹이나 돌이 체스판 밖으로 나갈 경우에는 그 이동은 건너 뛰고
+다음 이동을 한다.</p>
+<p>킹과 돌의 마지막 위치를 구하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>첫째 줄에 킹의 위치, 돌의 위치, 움직이는 횟수 N이 주어진다. 둘째 줄부터 N개의 줄에는 킹이 어떻게 움직여야 하는지 주어진다. N은
+50보다 작거나 같은 자연수이고, 움직이는 정보는 위에 쓰여 있는 8가지 중 하나이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 킹의 마지막 위치, 둘째 줄에 돌의 마지막 위치를 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1 A2 5
+B
+L
+LB
+RB
+LT
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>A1
+A2
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1 H8 1
+T
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>A2
+H8
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1 A2 1
+T
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>A2
+A3
+</code></pre>
+<h3>예제 4</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A1 A2 2
+T
+R
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>B2
+A3
+</code></pre>
+<h3>예제 5</h3>
+<p><strong>Input:</strong></p>
+<pre><code>A8 B7 18
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+RB
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>G2
+H1
+</code></pre>
+<h3>예제 6</h3>
+<p><strong>Input:</strong></p>
+<pre><code>C1 B1 3
+L
+T
+LB
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>B2
+A1
+</code></pre>
+        </body>
+        </html>
+        

@@ -1,0 +1,137 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>14174 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>14174. Block Game</h1>
+<p>Farmer John is trying to teach his cows to read by giving them a set of N
+spelling boards typically used with preschoolers (1≤N≤100). Each board has a
+word and an image on each side. For example, one side might have the word
+'cat' along with a picture of a cat, and the other side might have the word
+'dog' along with a picture of a dog. When the boards are lying on the ground,
+N words are therefore shown. By flipping over some of the boards, a different
+set of N words can be exposed.</p>
+<p>To help the cows with their spelling, Farmer John wants to fashion a number of
+wooden blocks, each embossed with a single letter of the alphabet. He wants to
+make sufficiently many blocks of each letter so that no matter which set of N
+words is exposed on the upward-facing boards, the cows will be able to spell
+all of these words using the blocks. For example, if N=3 and the words 'box',
+'cat', and 'car' were facing upward, the cows would need at least one 'b'
+block, one 'o' block, one 'x' block, two 'c' blocks, two 'a' blocks, one 't'
+block, and one 'r' block.</p>
+<p>Please help the Farmer John determine the minimum number of blocks for each
+letter of the alphabet that he needs to provide, so that irrespective of which
+face of each board is showing, the cows can spell all N visible words.</p>
+<h2>입력</h2>
+<p>Line 1 contains the integer N.</p>
+<p>The next N lines each contain 2 words separated by a space, giving the two
+words on opposite sides of a board. Each word is a string of at most 10
+lowercase letters.</p>
+<h2>출력</h2>
+<p>Please output 26 lines. The first output line should contain a number
+specifying the number of copies of 'a' blocks needed. The next line should
+specify the number of 'b' blocks needed, and so on.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3
+fox box
+dog cat
+car bus
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>2
+2
+2
+1
+0
+1
+1
+0
+0
+0
+0
+0
+0
+0
+2
+0
+0
+1
+1
+1
+1
+0
+0
+1
+0
+0
+</code></pre>
+        </body>
+        </html>
+        

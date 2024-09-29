@@ -1,0 +1,108 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "markdown",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "markdown",
+        "description": "markdown",
+        "detail": "markdown",
+        "documentation": {}
+    },
+    {
+        "label": "html2text",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "html2text",
+        "description": "html2text",
+        "detail": "html2text",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "pdfkit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pdfkit",
+        "description": "pdfkit",
+        "detail": "pdfkit",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "BOJProblemFetcher",
+        "kind": 6,
+        "importPath": "beyondcoding_boj",
+        "description": "beyondcoding_boj",
+        "peekOfCode": "class BOJProblemFetcher:\n    BASE_URL = 'https://www.acmicpc.net/problem/'\n    SOLVED_AC_API = 'https://solved.ac/api/v3/problem/show'\n    def __init__(self, problem_id, chapter=1, output_dir='./data', subdir=None, filename=None):\n        \"\"\"\n        Initialize the BOJProblemFetcher.\n        :param problem_id: ID of the BOJ problem to fetch.\n        :param chapter: Chapter number for organizing output.\n        :param output_dir: Base directory where outputs are saved.\n        :param subdir: Additional subdirectory path relative to output_dir.",
+        "detail": "beyondcoding_boj",
+        "documentation": {}
+    }
+]

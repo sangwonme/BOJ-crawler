@@ -1,0 +1,113 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>14530 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>14530. The Lost Cow</h1>
+<p>Farmer John has lost his prize cow Bessie, and he needs to find her!</p>
+<p>Fortunately, there is only one long path running across the farm, and Farmer
+John knows that Bessie has to be at some location on this path. If we think of
+the path as a number line, then Farmer John is currently at position \(x\)
+and Bessie is currently at position \(y\) (unknown to Farmer John). If
+Farmer John only knew where Bessie was located, he could walk directly to her,
+traveling a distance of \(|x - y|\). Unfortunately, it is dark outside and
+Farmer John can't see anything. The only way he can find Bessie is to walk
+back and forth until he eventually reaches her position.</p>
+<p>Trying to figure out the best strategy for walking back and forth in his
+search, Farmer John consults the computer science research literature and is
+somewhat amused to find that this exact problem has not only been studied by
+computer scientists in the past, but that it is actually called the "Lost Cow
+Problem" (this is actually true!).</p>
+<p>The recommended solution for Farmer John to find Bessie is to move to position
+\(x+1\), then reverse direction and move to position \(x-2\), then to
+position \(x+4\), and so on, in a "zig zag" pattern, each step moving twice
+as far from his initial starting position as before. As he has read during his
+study of algorithms for solving the lost cow problem, this approach guarantees
+that he will at worst travel 9 times the direct distance \(|x-y|\) between
+himself and Bessie before he finds her (this is also true, and the factor of 9
+is actually the smallest such worst case guarantee any strategy can achieve).</p>
+<p>Farmer John is curious to verify this result. Given \(x\) and \(y\),
+please compute the total distance he will travel according to the zig-zag
+search strategy above until he finds Bessie.</p>
+<h2>입력</h2>
+<p>The single line of input contains two distinct space-separated integers
+\(x\) and \(y\). Both are in the range \(0 \ldots 1,000\).</p>
+<h2>출력</h2>
+<p>Print one line of output, containing the distance Farmer John will travel to
+reach Bessie.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3 6
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>9
+</code></pre>
+        </body>
+        </html>
+        

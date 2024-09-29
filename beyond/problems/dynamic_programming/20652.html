@@ -1,0 +1,123 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>20652 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>20652. Stuck in a Rut</h1>
+<p>Farmer John has recently expanded the size of his farm, so from the
+perspective of his cows it is effectively now infinite in size! The cows think
+of the grazing area of the farm as an infinite 2D grid of square "cells", each
+filled with delicious grass (think of each cell as a square in an infinite
+chessboard). Each of Farmer John's $N$ cows ($1\le N\le 50$) starts out in a
+different cell; some start facing north, and some start facing east.</p>
+<p>Every hour, every cow either</p>
+<ul>
+<li>Stops if the grass in her current cell was already eaten by another cow.</li>
+<li>Eats all the grass in her current cell and moves one cell forward according to the direction she faces.</li>
+</ul>
+<p>Over time, each cow therefore leaves a barren "rut" of empty cells behind her.</p>
+<p>If two cows move onto the same grassy cell in the same move, they share the
+cell and continue moving in their respective directions in the next hour.</p>
+<p>Please determine the amount of grass eaten by each cow. Some cows never stop,
+and therefore eat an infinite amount of grass.</p>
+<h2>입력</h2>
+<p>The first line of input contains $N$. Each of the next $N$ lines describes the
+starting location of a cow, in terms of a character that is either N (for
+north-facing) or E (for east-facing) and two nonnegative integers $x$ and $y$
+($0\le x\le 10^9$, $0\le y\le 10^9$) giving the coordinates of a cell. All
+$x$-coordinates are distinct from each-other, and similarly for the
+$y$-coordinates.</p>
+<p>To be as clear as possible regarding directions and coordinates, if a cow is
+in cell $(x,y)$ and moves north, she ends up in cell $(x,y+1)$. If she instead
+had moved east, she would end up in cell $(x+1, y)$.</p>
+<h2>출력</h2>
+<p>Print $N$ lines of output. Line $i$ in the output should describe the number
+of cells worth of grass that the $i$th cow in the input eats. If a cow eats an
+infinite amount of grass, output "Infinity" for that cow.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>6
+E 3 5
+N 5 3
+E 4 6
+E 10 4
+N 11 2
+N 8 1
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>5
+3
+Infinity
+Infinity
+2
+5
+</code></pre>
+        </body>
+        </html>
+        
