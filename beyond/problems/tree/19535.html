@@ -1,0 +1,128 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/tree/">
+            <title>19535 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>19535. ㄷㄷㄷㅈ</h1>
+<p>어느 날, 트리를 물끄러미 보고 있던 동현이는 엄청난 사실을 하나 발견했다. 바로 정점이 네 개인 트리는 ‘ㄷ’과 ‘ㅈ’의 두 종류밖에
+없다는 사실이다!</p>
+<p>정점이 네 개 이상 있는 임의의 트리에 대해, 그 트리에서 정점 네 개로 이루어진 집합을 고르자. 전체 트리의 간선들 중 집합에 속한 두
+정점을 잇는 간선만을 남겼을 때, 네 개의 정점이 하나의 트리 형태로 이어지게 된다면 ‘ㄷ’ 모양이거나 ‘ㅈ’ 모양일 것이다. 트리에서
+‘ㄷ’의 개수와 ‘ㅈ’의 개수를 각각 트리에서 ‘ㄷ’ 모양, ‘ㅈ’ 모양을 이루는 정점 네 개짜리 집합의 개수라고 하자.</p>
+<p>이제, 동현이는 세상의 모든 트리를 다음과 같은 세 종류로 나누었다.</p>
+<ul>
+<li>D-트리 : ‘ㄷ’이 ‘ㅈ’의 3배보다 많은 트리</li>
+<li>G-트리 : ‘ㄷ’이 ‘ㅈ’의 3배보다 적은 트리</li>
+<li>DUDUDUNGA-트리 : ‘ㄷ’이 ‘ㅈ’의 정확히 3배만큼 있는 트리</li>
+</ul>
+<p>신이 난 동현이는 트리만 보이면 그 트리에 있는 ‘ㄷ’과 ‘ㅈ’이 몇 개인지 세고 다니기 시작했다. 하지만 곧 정점이 30만 개나 있는
+트리가 동현이 앞에 나타났고, 동현이는 그만 정신을 잃고 말았다. 동현이를 대신해 주어진 트리가 D-트리인지 G-트리인지 아니면
+DUDUDUNGA-트리인지 알려주자!</p>
+<h2>입력</h2>
+<p>첫 번째 줄에 트리의 정점 수 N이 주어진다. (4 ≤q N ≤q 300\ 000)</p>
+<p>두 번째 줄부터 N-1개의 줄에 트리의 각 간선이 잇는 두 정점의 번호 u, v가 주어진다. (1 ≤q u, v ≤q
+N)</p>
+<h2>출력</h2>
+<p>첫 번째 줄에 주어진 트리가 D-트리라면 <code>D</code>, G-트리라면 <code>G</code>, DUDUDUNGA-트리라면 <code>DUDUDUNGA</code>를 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>4
+1 2
+2 3
+3 4
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>D
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>4
+1 2
+1 3
+1 4
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>G
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>6
+1 2
+2 3
+3 4
+4 5
+4 6
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>DUDUDUNGA
+</code></pre>
+        </body>
+        </html>
+        

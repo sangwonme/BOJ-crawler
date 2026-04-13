@@ -1,0 +1,113 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/data_structure/">
+            <title>2504 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>2504. 괄호의 값</h1>
+<p>4개의 기호 ‘<code>(</code>’, ‘<code>)</code>’, ‘<code>[</code>’, ‘<code>]</code>’를 이용해서 만들어지는 괄호열 중에서 올바른 괄호열이란 다음과 같이 정의된다.</p>
+<ol>
+<li>한 쌍의 괄호로만 이루어진 ‘<code>()</code>’와 ‘<code>[]</code>’는 올바른 괄호열이다. </li>
+<li>만일 <code>X</code>가 올바른 괄호열이면 ‘<code>(X)</code>’이나 ‘<code>[X]</code>’도 모두 올바른 괄호열이 된다. </li>
+<li><code>X</code>와 <code>Y</code> 모두 올바른 괄호열이라면 이들을 결합한 <code>XY</code>도 올바른 괄호열이 된다.</li>
+</ol>
+<p>예를 들어 ‘<code>(()[[]])</code>’나 ‘<code>(())[][]</code>’ 는 올바른 괄호열이지만 ‘<code>([)]</code>’ 나 ‘<code>(()()[]</code>’ 은 모두 올바른
+괄호열이 아니다. 우리는 어떤 올바른 괄호열 <code>X</code>에 대하여 그 괄호열의 값(괄호값)을 아래와 같이 정의하고 값(<code>X</code>)로 표시한다.</p>
+<ol>
+<li>‘<code>()</code>’ 인 괄호열의 값은 2이다.</li>
+<li>‘<code>[]</code>’ 인 괄호열의 값은 3이다.</li>
+<li>‘<code>(X)</code>’ 의 괄호값은 2×값(<code>X</code>) 으로 계산된다.</li>
+<li>‘<code>[X]</code>’ 의 괄호값은 3×값(<code>X</code>) 으로 계산된다.</li>
+<li>올바른 괄호열 <code>X</code>와 <code>Y</code>가 결합된 <code>XY</code>의 괄호값은 값(<code>XY</code>)= 값(<code>X</code>)+값(<code>Y</code>) 로 계산된다.</li>
+</ol>
+<p>예를 들어 ‘<code>(()[[]])([])</code>’ 의 괄호값을 구해보자. ‘<code>()[[]]</code>’ 의 괄호값이 2 + 3×3=11 이므로
+‘<code>(()[[]])</code>’의 괄호값은 2×11=22 이다. 그리고 ‘<code>([])</code>’의 값은 2×3=6 이므로 전체 괄호열의 값은 22 + 6 =
+28 이다.</p>
+<p>여러분이 풀어야 할 문제는 주어진 괄호열을 읽고 그 괄호값을 앞에서 정의한대로 계산하여 출력하는 것이다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 괄호열을 나타내는 문자열(스트링)이 주어진다. 단 그 길이는 1 이상, 30 이하이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 그 괄호열의 값을 나타내는 정수를 출력한다. 만일 입력이 올바르지 못한 괄호열이면 반드시 0을 출력해야 한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>(()[[]])([])
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>28
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>[][]((])
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>0
+</code></pre>
+        </body>
+        </html>
+        

@@ -1,0 +1,104 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/shortest_path/">
+            <title>2224 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>2224. 명제 증명</h1>
+<p>수학, 혹은 논리학에서 만약 무엇 이라면 뭣 일 것이다 하는 식의 명제가 널리 쓰인다. 예를 들어 "P이면 Q일 것이다." 라는 명제는 “P
+=&gt; Q” 라는 기호로 표현된다. 이때의 P를 전건, Q를 후건이라고 한다.</p>
+<p>논리학에서 어떤 명제를 증명할 때 가장 널리 쓰이는 방법 중 한 가지가 바로 삼단 논법이다. 만약 두 명제 “P =&gt; Q", "Q =&gt; R"
+가 모두 참이면, 명제 "P =&gt; R"이 역시 참이 된다. 이러한 방법을 사용했을 때 명제 ”P =&gt; R"이 증명되었다고 한다.</p>
+<p>어떤 참인 명제가 주어졌을 때, 이 명제가 참이므로 이 명제 자체도 증명될 수 있다고 할 수 있다. 하지만 “P =&gt; P”와 같은 명제는
+항상 참이 되는데, 이런 식으로 전건과 후건이 같은 경우는 출력하지 않기로 한다.</p>
+<p>N개의 참인 명제들이 주어졌을 때, 증명될 수 있는 명제를 모두 구해내는 프로그램을 작성하시오. 명제를 증명하는 방법은 여러 가지가 있을 수
+있지만, 위에서 언급한 방법만을 사용하기로 한다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 정수 N(1 ≤ N ≤ 10,000)이 주어진다. 다음 N개의 줄에는 참인 명제들이 주어진다. 명제는 "P =&gt; Q"의 꼴로
+주어지는데, “=&gt;”는 앞뒤가 공백으로 구분되어 있다. P나 Q는 명제를 나타내는 문자인데, 알파벳 대소문자 한 글자를 사용한다. 같은
+명제가 여러 번 주어질 수도 있다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 출력할 명제의 개수 X개를 출력한다. 다음 X개의 줄에 증명될 수 있는 명제를 한 줄에 하나씩 출력한다. 명제를 출력할 때에는
+전건 순으로 정렬하고, 전건이 같은 경우에는 후건 순으로 정렬한다. 알파벳은 대문자가 소문자에 우선한다. 즉, 정렬했을 때 A, B, …,
+Z, a, b, …, z 순서로 나와야 한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>2
+A =&amp;gt; b
+b =&amp;gt; C
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>3
+A =&amp;gt; C
+A =&amp;gt; b
+b =&amp;gt; C
+</code></pre>
+        </body>
+        </html>
+        

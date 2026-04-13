@@ -1,0 +1,120 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/data_structure/">
+            <title>2800 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>2800. 괄호 제거</h1>
+<p>어떤 수식이 주어졌을 때, 괄호를 제거해서 나올 수 있는 서로 다른 식의 개수를 계산하는 프로그램을 작성하시오.</p>
+<p>이 수식은 괄호가 올바르게 쳐져 있다. 예를 들면, 1+2, (3+4), (3+4*(5+6))와 같은 식은 괄호가 서로 쌍이 맞으므로 올바른
+식이다.</p>
+<p>하지만, 1+(2<em>3, ((2+3)</em>4 와 같은 식은 쌍이 맞지 않는 괄호가 있으므로 올바른 식이 아니다.</p>
+<p>괄호를 제거할 때는, 항상 쌍이 되는 괄호끼리 제거해야 한다.</p>
+<p>예를들어 (2+(2<em>2)+2)에서 괄호를 제거하면, (2+2</em>2+2), 2+(2<em>2)+2, 2+2</em>2+2를 만들 수 있다. 하지만,
+(2+2<em>2)+2와 2+(2</em>2+2)는 만들 수 없다. 그 이유는 쌍이 되지 않는 괄호를 제거했기 때문이다.</p>
+<p>어떤 식을 여러 쌍의 괄호가 감쌀 수 있다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 음이 아닌 정수로 이루어진 수식이 주어진다. 이 수식은 괄호가 올바르게 쳐져있다. 숫자, '+', '*', '-', '/',
+'(', ')'로만 이루어져 있다. 수식의 길이는 최대 200이고, 괄호 쌍은 적어도 1개, 많아야 10개이다.</p>
+<h2>출력</h2>
+<p>올바른 괄호 쌍을 제거해서 나올 수 있는 서로 다른 식을 사전 순으로 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>(0/(0))
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>(0/0)
+0/(0)
+0/0
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>(2+(2*2)+2)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>(2+2*2+2)
+2+(2*2)+2
+2+2*2+2
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>(1+(2*(3+4)))
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>(1+(2*3+4))
+(1+2*(3+4))
+(1+2*3+4)
+1+(2*(3+4))
+1+(2*3+4)
+1+2*(3+4)
+1+2*3+4
+</code></pre>
+        </body>
+        </html>
+        

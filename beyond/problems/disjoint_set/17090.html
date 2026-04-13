@@ -1,0 +1,131 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/disjoint_set/">
+            <title>17090 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>17090. 미로 탈출하기</h1>
+<p>크기가 N×M인 미로가 있고, 미로는 크기가 1×1인 칸으로 나누어져 있다. 미로의 각 칸에는 문자가 하나 적혀있는데, 적혀있는 문자에
+따라서 다른 칸으로 이동할 수 있다.</p>
+<p>어떤 칸(r, c)에 적힌 문자가</p>
+<ul>
+<li>U인 경우에는 (r-1, c)로 이동해야 한다.</li>
+<li>R인 경우에는 (r, c+1)로 이동해야 한다.</li>
+<li>D인 경우에는 (r+1, c)로 이동해야 한다.</li>
+<li>L인 경우에는 (r, c-1)로 이동해야 한다.</li>
+</ul>
+<p>미로에서 탈출 가능한 칸의 수를 계산해보자. 탈출 가능한 칸이란, 그 칸에서 이동을 시작해서 칸에 적힌대로 이동했을 때, 미로의 경계 밖으로
+이동하게 되는 칸을 의미한다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 미로의 크기 N, M(3 ≤ N, M ≤ 500)이 주어진다. 둘째 줄부터 N개의 줄에는 미로의 각 칸에 적힌 문자가 주어진다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 탈출 가능한 칸의 수를 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3 3
+DDD
+DDD
+DDD
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>9
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3 3
+DDR
+DLU
+LLL
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>9
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3 3
+RRD
+RDD
+ULL
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>0
+</code></pre>
+<h3>예제 4</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3 4
+RRDD
+RRDR
+DULU
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>4
+</code></pre>
+        </body>
+        </html>
+        

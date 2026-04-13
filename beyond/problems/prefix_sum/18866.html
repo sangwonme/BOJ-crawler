@@ -1,0 +1,126 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/prefix_sum/">
+            <title>18866 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>18866. 젊은 날의 생이여</h1>
+<p>욱제는 입대를 앞두고 &lt;이등병의 편지&gt;를 부르고 있다.</p>
+<p><em>… 이제 다시 시작이다 젊은 날의 생이여 …</em></p>
+<p>그런데 과연 욱제에게 젊은 날이 있었을까? 욱제에게 젊은 날이 있었는지 알아보자.</p>
+<p>먼저, N년간 욱제의 행복도와 피로도가 주어진다. 행복도와 피로도는 양의 실수 값을 가진다. 어떤 1 ≤ K &lt; N에 대해 1, 2, …,
+K년은 욱제의 젊은 날이고, K + 1, K + 2, …, N년은 욱제의 늙은 날이다.</p>
+<p>젊은 날과 늙은 날은 다음의 조건을 만족한다:</p>
+<ul>
+<li>임의의 젊은 날의 행복도는 임의의 늙은 날의 행복도보다 높다.</li>
+<li>임의의 젊은 날의 피로도는 임의의 늙은 날의 피로도보다 낮다.</li>
+</ul>
+<p>욱제는 자신의 행복도와 피로도를 이용하여 자신의 젊은 날을 알아보려 한다. 하지만, 일부 값이 누락되었다. 욱제를 도와주자.</p>
+<h2>입력</h2>
+<p>첫째 줄에 N이 주어진다.</p>
+<p>둘째 줄부터 N개의 줄에는 두 <strong>정수</strong> ui, vi (1 ≤ i ≤ N)가 주어진다. ui, vi가 1 이상일 경우 각각 i년의 행복도와
+피로도를 나타내며, 0인 경우에는 값이 누락되었음을 의미한다.</p>
+<h2>출력</h2>
+<p>욱제의 젊은 날이 될 수 있는 최대 기간, 즉 문제의 조건을 만족할 수 있는 최대의 1 ≤ K &lt; N을 출력한다. 단, 이러한 K가 없을
+경우, -1을 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>5
+5 1
+4 2
+3 3
+2 5
+1 4
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>3
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3
+1 1
+2 2
+3 3
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>-1
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>3
+0 0
+0 0
+0 0
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>2
+</code></pre>
+        </body>
+        </html>
+        

@@ -1,0 +1,141 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/divide_and_conquer/">
+            <title>1493 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>1493. 박스 채우기</h1>
+<p>세준이는 length × width × height 크기의 박스를 가지고 있다. 그리고 세준이는 이 박스를 큐브를 이용해서 채우려고 한다.
+큐브는 정육면체 모양이며, 한 변의 길이는 2의 제곱꼴이다. (1×1×1, 2×2×2, 4×4×4, 8×8×8, ...)</p>
+<p>세준이가 가지고 있는 박스의 종류와 큐브의 종류와 개수가 주어졌을 때, 박스를 채우는데 필요한 큐브의 최소 개수를 출력하는 프로그램을
+작성하시오.</p>
+<h2>입력</h2>
+<p>첫째 줄에 세 자연수 length width height가 주어진다.</p>
+<p>둘째 줄에 세준이가 가지고 있는 큐브의 종류의 개수 N이 주어진다.</p>
+<p>셋째 줄부터 총 N개의 줄에 큐브의 종류 Ai와 개수 Bi가 i가 증가하는 순서대로 주어진다. 큐브의 종류는 한 변의 길이를 나타낼 때 쓰는
+2i에서 i이다.</p>
+<h2>출력</h2>
+<p>첫째 줄에 필요한 큐브의 개수의 최솟값을 출력한다. 만약 채울 수 없다면 -1을 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>4 4 8
+3
+0 10
+1 10
+2 1
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>9
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>4 4 8
+3
+0 10
+1 10
+2 10
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>2
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>10 10 11
+1
+0 2000
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>1100
+</code></pre>
+<h3>예제 4</h3>
+<p><strong>Input:</strong></p>
+<pre><code>10 10 11
+1
+0 1099
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>-1
+</code></pre>
+<h3>예제 5</h3>
+<p><strong>Input:</strong></p>
+<pre><code>37 42 59
+6
+0 143821
+1 14382
+2 1438
+3 143
+4 14
+5 1
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>5061
+</code></pre>
+        </body>
+        </html>
+        

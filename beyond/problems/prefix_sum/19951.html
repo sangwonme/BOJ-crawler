@@ -1,0 +1,106 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/prefix_sum/">
+            <title>19951 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>19951. 태상이의 훈련소 생활</h1>
+<p>2020년 5월 14일 논산훈련소에 입대한 태상이는 첫 총기 훈련에서 가스 조절기를 잃어버리는 중대한 실수를 범했다. 그로 인해, 태상이는
+조교들에게 눈총을 받게 되었다. 조교들은 태상이에게 연병장(운동장)의 흙을 옮기는 일을 주고 제대로 수행하지 못하면 징계를 내리려고 한다.</p>
+<p>연병장은 일렬로 이어진 <em>N</em> 개의 칸으로 이루어져 있으며 각 칸마다 높이를 가지고 있고, 첫 번째 칸부터 순서대로 1번, 2번, 3번,
+..., <em>N</em> 번 칸으로 명칭이 붙어있다. 조교들은 총 <em>M</em> 명이 있으며, 각 조교들은 태상이에게 <em>a</em> 번 칸부터 <em>b</em> 번 칸까지
+높이 <em>k</em> 만큼 흙을 덮거나 파내라고 지시한다. 흙은 주변 산에서 얼마든지 구할 수 있으므로 절대로 부족하지 않다.</p>
+<p>태상이는 각 조교의 지시를 각각 수행하면, 다른 조교의 지시로 흙을 덮어둔 칸을 다시 파내기도 하는 비효율적인 일이 발생하는 것을 깨달았다.
+그래서 태상이는 각 조교의 지시를 모아 연병장 각 칸의 최종 높이를 미리 구해 한 번에 일을 수행하려고 한다.</p>
+<p>불쌍한 태상이를 위해 조교들의 지시를 모두 수행한 뒤 연병장 각 칸의 높이를 구하자.</p>
+<h2>입력</h2>
+<p>첫 줄에 연병장의 크기 <em>N</em> 과 조교의 수 <em>M</em> 이 주어진다.</p>
+<p>둘째 줄에 연병장 각 칸의 높이 <em>H i_가 순서대로 _N</em> 개 주어진다.</p>
+<p>셋째 줄부터 <em>M</em> 개의 줄에 각 조교의 지시가 주어진다.</p>
+<p>각 조교의 지시는 세 개의 정수 <em>a</em> , <em>b</em> , <em>k</em> 로 이루어져 있다.</p>
+<ul>
+<li><em>k</em> ≥ 0인 경우 <em>a</em> 번 칸부터 <em>b</em> 번 칸까지 높이가 각각 | <em>k</em> | 만큼 늘어나도록 흙을 덮어야 한다.</li>
+<li><em>k</em> &lt; 0인 경우 <em>a</em> 번 칸부터 <em>b</em> 번 칸까지 높이가 각각 | <em>k</em> | 만큼 줄어들도록 흙을 파내야 한다.</li>
+</ul>
+<h2>출력</h2>
+<p>모든 지시를 수행한 뒤 연병장 각 칸의 높이를 공백을 사이에 두고 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>10 3
+1 2 3 4 5 -1 -2 -3 -4 -5
+1 5 -3
+6 10 5
+2 7 2
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>-2 1 2 3 4 6 5 2 1 0
+</code></pre>
+        </body>
+        </html>
+        

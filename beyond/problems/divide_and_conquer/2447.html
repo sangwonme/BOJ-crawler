@@ -1,0 +1,121 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/divide_and_conquer/">
+            <title>2447 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>2447. 별 찍기 - 10</h1>
+<p>재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, ...)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다.</p>
+<p>크기 3의 패턴은 가운데에 공백이 있고, 가운데를 제외한 모든 칸에 별이 하나씩 있는 패턴이다.</p>
+<pre><code>***
+* *
+***
+</code></pre>
+<p>N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데의 (N/3)×(N/3) 정사각형을 크기 N/3의 패턴으로 둘러싼 형태이다.
+예를 들어 크기 27의 패턴은 예제 출력 1과 같다.</p>
+<h2>입력</h2>
+<p>첫째 줄에 N이 주어진다. N은 3의 거듭제곱이다. 즉 어떤 정수 k에 대해 N=3k이며, 이때 1 ≤ k &lt; 8이다.</p>
+<h2>출력</h2>
+<p>첫째 줄부터 N번째 줄까지 별을 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>27
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***   ***         ***   ***
+* *   * *         * *   * *
+***   ***         ***   ***
+*********         *********
+* ** ** *         * ** ** *
+*********         *********
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+***   ******   ******   ***
+* *   * ** *   * ** *   * *
+***   ******   ******   ***
+***************************
+* ** ** ** ** ** ** ** ** *
+***************************
+</code></pre>
+        </body>
+        </html>
+        

@@ -1,0 +1,109 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/tree/">
+            <title>9489 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>9489. 사촌</h1>
+<p>증가하는 정수 수열을 이용해서 트리를 만드는 방법은 다음과 같다.</p>
+<ul>
+<li>첫 번째 정수는 트리의 루트 노드이다.</li>
+<li>다음에 등장하는 연속된 수의 집합은 루트의 자식을 나타낸다. 이 집합에 포함되는 수의 첫 번째 수는 항상 루트 노드+1보다 크다.</li>
+<li>그 다음부터는 모든 연속된 수의 집합은 아직 자식이 없는 노드의 자식이 된다. 그러한 노드가 여러 가지 인 경우에는 가장 작은 수를 가지는 노드의 자식이 된다.</li>
+<li>집합은 수가 연속하지 않는 곳에서 구분된다.</li>
+</ul>
+<p>예를 들어, 수열 1 3 4 5 8 9 15 30 31 32를 위의 규칙을 이용해 트리를 만들면 아래 그림과 같이 된다.</p>
+<p><img alt="" src="images/cc.png" /></p>
+<p>두 노드의 부모는 다르지만, 두 부모가 형제(sibling)일 때 두 노드를 사촌이라고 한다.</p>
+<p>수열 특정 노드 번호 k가 주어졌을 때, k의 사촌의 수를 구하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>입력은 여러 개의 테스트 케이스로 이루어져 있다. 각 테스트 케이스의 첫째 줄에는 노드의 수 n과 사촌의 수를 구해야 하는 노드의 번호 k가
+주어진다. (1 ≤ n ≤ 1,000, 1 ≤ k ≤ 1,000,000) 다음 줄에는 총 n개의 수가 주어지며, 모든 수는 1보다 크거나
+같고, 1,000,000보다 작거나 같다. 입력으로 주어지는 수열은 항상 증가한다. k는 항상 수열에 포함되는 수이다.</p>
+<p>입력의 마지막 줄에는 0이 두 개 주어진다.</p>
+<h2>출력</h2>
+<p>각 테스트 케이스 마다, k의 사촌의 수를 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>10 15
+1 3 4 5 8 9 15 30 31 32
+12 9
+3 5 6 8 9 10 13 15 16 22 23 25
+10 4
+1 3 4 5 8 9 15 30 31 32
+0 0
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>5
+1
+0
+</code></pre>
+        </body>
+        </html>
+        

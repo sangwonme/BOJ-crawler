@@ -1,0 +1,137 @@
+
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <base href="file:///Users/sangwon/Desktop/Folder/Github-Repos/BOJ-crawler/beyond/problems/dynamic_programming_1/">
+            <title>12026 - BOJ Problem</title>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 40px;
+                    background-color: #ffffff;
+                    color: #333366;
+                }
+                h1, h2, h3 {
+                    color: #104061;
+                    border-bottom: 1px solid #6f8695;
+                    padding-bottom: 5px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                h2 {
+                    font-size: 1.5em;
+                }
+                h3 {
+                    font-size: 1.2em;
+                }
+                p, pre, code, table {
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+                a {
+                    color: #6699ff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #cce6ff;
+                }
+                pre {
+                    background-color: #eeeae6;
+                    padding: 10px;
+                    border-radius: 5px;
+                    overflow-x: auto;
+                }
+                code {
+                    padding: 2px 4px;
+                    padding-left: 0;
+                    border-radius: 3px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 20px auto;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>12026. BOJ 거리</h1>
+<p>BOJ 거리는 보도블록 N개가 일렬로 놓여진 형태의 도로이다. 도로의 보도블록은 1번부터 N번까지 번호가 매겨져 있다.</p>
+<p>스타트의 집은 1번에 있고, 링크의 집은 N번에 있다. 스타트는 링크를 만나기 위해서 점프해가려고 한다.</p>
+<p>BOJ거리의 각 보도블록에는 B, O, J 중에 하나가 쓰여 있다. 1번은 반드시 B이다.</p>
+<p>스타트는 점프를 통해서 다른 보도블록으로 이동할 수 있다. 이때, 항상 번호가 증가하는 방향으로 점프를 해야 한다. 만약, 스타트가 현재
+있는 곳이 i번이라면, i+1번부터 N번까지로 점프를 할 수 있다. 한 번 k칸 만큼 점프를 하는데 필요한 에너지의 양은 k*k이다.</p>
+<p>스타트는 BOJ를 외치면서 링크를 만나러 가려고 한다. 따라서, 스타트는 B, O, J, B, O, J, B, O, J, ... 순서로
+보도블록을 밟으면서 점프를 할 것이다.</p>
+<p>스타트가 링크를 만나는데 필요한 에너지 양의 최솟값을 구하는 프로그램을 작성하시오.</p>
+<h2>입력</h2>
+<p>첫째 줄에 1 ≤ N ≤ 1,000이 주어진다.</p>
+<p>둘째 줄에는 보도블록에 쓰여 있는 글자가 1번부터 순서대로 주어진다.</p>
+<h2>출력</h2>
+<p>스타트가 링크를 만나는데 필요한 에너지 양의 최솟값을 출력한다. 만약, 스타트가 링크를 만날 수 없는 경우에는 -1을 출력한다.</p>
+<h2>예제 입출력</h2>
+<h3>예제 1</h3>
+<p><strong>Input:</strong></p>
+<pre><code>9
+BOJBOJBOJ
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>8
+</code></pre>
+<h3>예제 2</h3>
+<p><strong>Input:</strong></p>
+<pre><code>9
+BOJBOJBOJ
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>8
+</code></pre>
+<h3>예제 3</h3>
+<p><strong>Input:</strong></p>
+<pre><code>8
+BJJOOOBB
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>-1
+</code></pre>
+<h3>예제 4</h3>
+<p><strong>Input:</strong></p>
+<pre><code>13
+BJBBJOOOJJJJB
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>50
+</code></pre>
+<h3>예제 5</h3>
+<p><strong>Input:</strong></p>
+<pre><code>2
+BO
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>1
+</code></pre>
+<h3>예제 6</h3>
+<p><strong>Input:</strong></p>
+<pre><code>15
+BJBOJOJOOJOBOOO
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>52
+</code></pre>
+        </body>
+        </html>
+        

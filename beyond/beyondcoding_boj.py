@@ -9,13 +9,13 @@ import re
 import pandas as pd
 import pdfkit
 import argparse
-
+import base64
 
 class BOJProblemFetcher:
     BASE_URL = 'https://www.acmicpc.net/problem/'
     SOLVED_AC_API = 'https://solved.ac/api/v3/problem/show'
 
-    def __init__(self, problem_id, chapter=1, output_dir='./data', subdir=None, filename=None):
+    def __init__(self, problem_id, chapter=1, output_dir='./data', subdir=None, filename=None, embed_images=False):
         """
         Initialize the BOJProblemFetcher.
 
@@ -24,6 +24,7 @@ class BOJProblemFetcher:
         :param output_dir: Base directory where outputs are saved.
         :param subdir: Additional subdirectory path relative to output_dir.
         :param filename: Custom filename for the output HTML file.
+        :param embed_images: If True, embed images as Base64 in HTML.
         """
         self.problem_id = problem_id
         self.chapter = chapter
@@ -36,8 +37,10 @@ class BOJProblemFetcher:
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                 'AppleWebKit/537.36 (KHTML, like Gecko) '
                 'Chrome/91.0.4472.77 Safari/537.36'
-            )
+            ),
+            'Referer': 'https://www.acmicpc.net'  # Added Referer header
         }
+        self.embed_images = embed_images  # New parameter to control image embedding
 
     def set_output_directory(self, output_dir):
         """
@@ -78,6 +81,107 @@ class BOJProblemFetcher:
         data = response.json()
         return data.get('level', 1)  # Default to level 1 if not found
 
+    def download_and_replace_images(self, html_content):
+        """
+        Download all images in the HTML content and replace their src with local paths.
+
+        :param html_content: HTML content as a string.
+        :return: Modified HTML content with updated image sources.
+        """
+        soup = BeautifulSoup(html_content, 'html.parser')
+
+        # Create images directory
+        images_dir = self.output_dir / self.subdir / 'images'
+        images_dir.mkdir(parents=True, exist_ok=True)
+
+        for img in soup.find_all('img'):
+            img_url = img.get('src')
+            if not img_url:
+                continue
+
+            # Handle relative URLs
+            if img_url.startswith('/'):
+                img_url = f'https://www.acmicpc.net{img_url}'
+
+            try:
+                img_response = requests.get(img_url, headers=self.headers)
+                img_response.raise_for_status()
+
+                # Determine image filename
+                img_filename = os.path.basename(img_url)
+                local_img_path = images_dir / img_filename
+
+                # Save image locally
+                with open(local_img_path, 'wb') as f:
+                    f.write(img_response.content)
+                print(f'Downloaded image: {img_url} to {local_img_path}')
+
+                # Replace src with relative path
+                img['src'] = f'images/{img_filename}'
+
+            except requests.HTTPError as http_err:
+                print(f'Failed to download image {img_url}: {http_err}')
+                # Optionally, replace with placeholder or remove the img tag
+                img.decompose()  # Remove the img tag
+                continue
+
+            except Exception as e:
+                print(f'An error occurred while downloading image {img_url}: {e}')
+                img.decompose()  # Remove the img tag
+                continue
+
+        return str(soup)
+
+    def embed_images_as_base64(self, html_content):
+        """
+        Embed all images in the HTML content as Base64.
+
+        :param html_content: HTML content as a string.
+        :return: Modified HTML content with embedded images.
+        """
+        soup = BeautifulSoup(html_content, 'html.parser')
+
+        for img in soup.find_all('img'):
+            img_url = img.get('src')
+            if not img_url:
+                continue
+
+            # Handle relative URLs
+            if img_url.startswith('/'):
+                img_url = f'https://www.acmicpc.net{img_url}'
+
+            try:
+                img_response = requests.get(img_url, headers=self.headers)
+                img_response.raise_for_status()
+
+                # Get image MIME type
+                content_type = img_response.headers.get('Content-Type')
+                if not content_type:
+                    print(f'Could not determine content type for image: {img_url}')
+                    continue
+
+                # Encode image in Base64
+                encoded_string = base64.b64encode(img_response.content).decode('utf-8')
+                data_uri = f"data:{content_type};base64,{encoded_string}"
+
+                # Replace src with data URI
+                img['src'] = data_uri
+
+                print(f'Embedded image: {img_url} as Base64')
+
+            except requests.HTTPError as http_err:
+                print(f'Failed to embed image {img_url}: {http_err}')
+                # Optionally, replace with placeholder or remove the img tag
+                img.decompose()  # Remove the img tag
+                continue
+
+            except Exception as e:
+                print(f'An error occurred while embedding image {img_url}: {e}')
+                img.decompose()  # Remove the img tag
+                continue
+
+        return str(soup)
+
     def parse_html(self, html):
         """Parse the HTML content and extract relevant sections."""
         soup = BeautifulSoup(html, 'html.parser')
@@ -102,12 +206,48 @@ class BOJProblemFetcher:
             sample_io.append((sample_input.get_text(strip=True), sample_output.get_text(strip=True)))
             index += 1
 
+        # Process images in each section
+        if description:
+            description_html = str(description)
+            if self.embed_images:
+                description_html = self.embed_images_as_base64(description_html)
+            else:
+                description_html = self.download_and_replace_images(description_html)
+            description = description_html
+
+        if input_section:
+            input_html = str(input_section)
+            if self.embed_images:
+                input_html = self.embed_images_as_base64(input_html)
+            else:
+                input_html = self.download_and_replace_images(input_html)
+            input_section = input_html
+
+        if output_section:
+            output_html = str(output_section)
+            if self.embed_images:
+                output_html = self.embed_images_as_base64(output_html)
+            else:
+                output_html = self.download_and_replace_images(output_html)
+            output_section = output_html
+
+        # Process images in sample sections
+        processed_samples = []
+        for inp, outp in sample_io:
+            if self.embed_images:
+                inp = self.embed_images_as_base64(inp)
+                outp = self.embed_images_as_base64(outp)
+            else:
+                inp = self.download_and_replace_images(inp)
+                outp = self.download_and_replace_images(outp)
+            processed_samples.append((inp, outp))
+
         return {
             'title': title,
-            'description': str(description) if description else '',
-            'input': str(input_section) if input_section else '',
-            'output': str(output_section) if output_section else '',
-            'samples': sample_io
+            'description': description if description else '',
+            'input': input_section if input_section else '',
+            'output': output_section if output_section else '',
+            'samples': processed_samples
         }
 
     def convert_to_markdown(self, parsed_data, level):
@@ -117,18 +257,13 @@ class BOJProblemFetcher:
         h.ignore_images = False
         h.ignore_emphasis = False
 
-        # Calculate stars based on level
-        # star_count = min((level - 1) // 5 + 1, 3)  # Cap at 3 stars
-        # stars = '★' * star_count + '☆' * (3 - star_count)
-
-        # md_content = f"# {parsed_data['title']} {stars}\n\n"
+        # md_content = f"# {self.problem_id}. {parsed_data['title']}\n"
         md_content = f"# {self.problem_id}. {parsed_data['title']}\n"
 
         for section, heading in [('description', 'Description'),
                                  ('input', 'Input'),
                                  ('output', 'Output')]:
             if parsed_data[section]:
-                # md_content += f"## {heading}\n\n"
                 md_content += h.handle(parsed_data[section]) + "\n"
 
         if parsed_data['samples']:
@@ -138,17 +273,29 @@ class BOJProblemFetcher:
                 md_content += f"**Input:**\n\n```\n{inp}\n```\n\n"
                 md_content += f"**Output:**\n\n```\n{outp}\n```\n\n"
         md_content = re.sub(r'예제\s+(입력|출력)\s*\d+\s*복사', '', md_content)
+        
+        # preprocess
+        md_content = md_content.replace('$', '')
+        md_content = md_content.replace('\\times', ' X ')
+        md_content = md_content.replace('^\circ', '°')
+        md_content = md_content.replace('\\le', '≤')
+        
         return md_content
 
     def convert_markdown_to_html(self, md_text):
         """Convert Markdown text to styled HTML."""
         html_content = markdown.markdown(md_text, extensions=['fenced_code', 'tables'])
 
+        # Determine the base path for relative URLs
+        base_path = self.output_dir / self.subdir
+        base_uri = base_path.resolve().as_uri() + '/'
+
         styled_html = f"""
         <!DOCTYPE html>
         <html lang="ko">
         <head>
             <meta charset="UTF-8">
+            <base href="{base_uri}">
             <title>{self.problem_id} - BOJ Problem</title>
             <style>
                 body {{
@@ -232,7 +379,6 @@ class BOJProblemFetcher:
             file.write(html_content)
         print(f'HTML saved to: {file_path.resolve()}')
 
-
     def convert_html_to_pdf(self, html_content):
         """Convert HTML content to PDF."""
         # Define the full output path
@@ -248,8 +394,23 @@ class BOJProblemFetcher:
         print(f'HTML saved to: {html_file_path.resolve()}')
 
         try:
-            # Convert HTML to PDF
-            pdfkit.from_file(str(html_file_path), str(pdf_file_path))
+            # Define options for pdfkit
+            options = {
+                'enable-local-file-access': None,  # Allows accessing local files
+                'quiet': '',  # Suppress wkhtmltopdf output
+            }
+
+            # Set the base URL to the directory containing the HTML file
+            base_url = str(full_output_path.resolve())
+
+            # Convert HTML to PDF with options and base_url
+            pdfkit.from_file(
+                str(html_file_path),
+                str(pdf_file_path),
+                options=options,
+                configuration=pdfkit.configuration(),  # Ensure wkhtmltopdf is properly configured
+                # base_url=base_url  # Critical for resolving relative paths
+            )
             print(f'PDF saved to: {pdf_file_path.resolve()}')
         except Exception as e:
             print(f'Failed to convert HTML to PDF: {e}')
@@ -269,11 +430,7 @@ class BOJProblemFetcher:
         print(f'HTML saved to: {html_file_path.resolve()}')
 
         # Convert HTML to PDF
-        try:
-            pdfkit.from_file(str(html_file_path), str(pdf_file_path))
-            print(f'PDF saved to: {pdf_file_path.resolve()}')
-        except Exception as e:
-            print(f'Failed to convert HTML to PDF: {e}')
+        # self.convert_html_to_pdf(html_content)
 
     def process(self):
         """Execute the full processing pipeline."""
@@ -292,21 +449,28 @@ class BOJProblemFetcher:
 
 # Example Usage
 if __name__ == "__main__":
-    # Example: Fetch and save problem #1000
+    # Example: Fetch and save problems from 'easy_set.csv'
 
-    problem_set = pd.read_csv('./easy_set.csv')
+
+    problem_set = pd.read_csv('easy_set.csv')
 
     for i in range(len(problem_set)):
-        problem_id = int(problem_set.loc[i, 'problem_id'])
-        chapter = problem_set.loc[i, 'category']
-        print(problem_id)
+        problem_id = int(problem_set.loc[i, 'ID'])
+        chapter = problem_set.loc[i, 'algorithm_name']
+        print(f'Processing Problem ID: {problem_id}')
 
         # Initialize the fetcher with default output settings
-        fetcher = BOJProblemFetcher(problem_id=problem_id, chapter=chapter)
+        # Set embed_images=True to embed images as Base64 in HTML and PDF
+        # Set embed_images=False to download images and reference them locally
+        fetcher = BOJProblemFetcher(
+            problem_id=problem_id,
+            chapter=chapter,
+            embed_images=False  # Change to True if you prefer embedding images
+        )
 
         # Optionally, set a custom output directory and subdirectory
         fetcher.set_output_directory('./problems')
-        fetcher.set_subdirectory('simulation')
+        fetcher.set_subdirectory(chapter)
         fetcher.set_filename(f'{problem_id}.html')  # Optional: set a custom filename
 
         # Execute the fetching and saving process
